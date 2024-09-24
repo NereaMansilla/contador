@@ -1,0 +1,82 @@
+body{
+    margin:0px;
+}
+
+.container{
+    margin: 0;
+    background-color: #f2f2e5;;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+.welcomeContainer{
+    margin: 0;
+    align-self: center;
+    
+   
+    
+  
+  
+}
+
+.welcome{
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    flex-direction: column; /* Updated to column layout */
+    text-align: center; /* Center text horizontally */
+   
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img{
+ 
+    height: 100px;
+    width: 250px;
+    object-fit: cover;
+    display: flex;
+   
+
+}
+
+.sede-text{
+    display: flex;
+    justify-content: space-around;
+    font-size: 120px ;
+    font-weight: 800;
+    color: white;
+    
+   
+    
+}
+
+.counter-label{
+    width: 60vw;
+    
+}
+.counter{
+    font-size: 170px;
+}
+
+  .dgcye{
+    color: rgb(206, 121, 10);
+    
+}
+.mlp{
+    color: rgb(155, 10, 10);
+}
+.policia{
+color: rgb(11, 11, 133);
+}
+
+.varios{
+    color: rgb(43, 179, 38);
+}  

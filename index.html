@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Dienst Contador</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <audio id="sonido" src="./dindon.mp3"></audio> <!-- Asegúrate de cambiar "sonido.mp3" por el archivo de sonido que tengas -->
+  <img src="./img/img2.jpg" alt="dienstLogo" class="img">
+
+  <div class="welcomeContainer">
+
+    <div class="sede-text dgcye">
+      <div class="counter-label police">EDUCACION</div>
+      <div class="counter" id="counter1">0</div>
+    </div>
+    <br/>
+  
+    <div class="sede-text mlp">
+      <div class="counter-label education">MUNICIPALIDAD </div>
+      <div class="counter" id="counter2">0</div>
+    </div>
+ 
+  <br/>
+  <div class="sede-text policia">
+    <div class="counter-label education">POLICIA</div>
+    <div class="counter" id="counter3">0</div>
+  </div>
+  
+  <br/>
+  <div class="sede-text varios">
+    <div class="counter-label education">VARIOS</div>
+    <div class="counter" id="counter4">0</div>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+
+
+<script>
+  // Get the counter elements
+  const counterElement1 = document.getElementById('counter1');
+  const counterElement2 = document.getElementById('counter2');
+  const counterElement3 = document.getElementById('counter3');
+  const counterElement4 = document.getElementById('counter4');
+  function reproducirSonido() {
+            let audio = new Audio('./dindon.mp3'); 
+            let suena = false;
+            audio.play(); 
+
+
+            audio.onplay = () => {
+             let suena = true;
+          
+               };
+
+           audio.onended = () => {
+            let suena = false;
+          
+         };
+
+
+            
+        }
+
+
+
+  // Function to update the counters
+  function updateCounters() {
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    let count4 = 0;
+
+    // Update the counter texts
+    counterElement1.innerText = count1;
+    counterElement2.innerText = count2;
+    counterElement2.innerText = count3;
+    counterElement4.innerText = count4;
+
+    // Increment the counters based on arrow keys or reset on "R" key
+    function handleKeyPress(event) {
+      if (event.key === 'ArrowLeft') {
+        // Increment the first counter
+        count1++;
+        reproducirSonido();
+   
+
+        // If the first counter reaches 1000, reset it to 0
+        if (count1 === 1000) {
+          count1 = 0;
+        }
+
+        // Update the first counter text
+        counterElement1.innerText = count1;
+      } else if (event.key === 'ArrowRight') {
+        // Increment the second counter
+        count2++;
+        reproducirSonido();
+
+        // If the second counter reaches 1000, reset it to 0
+        if (count2 === 1000) {
+          count2 = 0;
+        }
+
+        // Update the second counter text
+        counterElement2.innerText = count2;
+
+      } else if (event.key === 'P' || event.key === "p") {
+        // Increment the second counter
+        count3++;
+        reproducirSonido();
+
+        // If the second counter reaches 1000, reset it to 0
+        if (count3 === 1000) {
+          count3 = 0;
+        }
+
+        // Update the second counter text
+        counterElement3.innerText = count3;
+      }
+      else if (event.key === 'V' || event.key === "v") {
+        // Increment the second counter
+        count4++;
+        reproducirSonido();
+
+        // If the second counter reaches 1000, reset it to 0
+        if (count4 === 1000) {
+          count4 = 0;
+        }
+
+        // Update the second counter text
+        counterElement4.innerText = count4;
+      }
+      else if(event.key === 'R' || event.key === 'r') {
+        // Reset counters to zero on "R" key
+        count1 = 0;
+        count2 = 0;
+        count3 = 0;
+        count4 = 0;
+        counterElement1.innerText = count1;
+        counterElement2.innerText = count2;
+        counterElement3.innerText = count3;
+        counterElement4.innerText = count4;
+      }
+    }
+
+    // Add event listener to arrow keys and "R" key
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Update the counters every 100 milliseconds
+    const intervalId = setInterval(() => {}, 100);
+  }
+
+  // Start the counters when the page loads
+  updateCounters();
+</script>
+
+</body>
+</html>
